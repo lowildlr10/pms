@@ -16,4 +16,9 @@ Route::get('/', function () {
     return view('app');
 });*/
 
-Route::view('/{path?}', 'app');
+//Route::view('/{path?}', 'app');
+
+Route::any('/', 'ContentController@index')->name('contents');
+Route::post('store', 'ContentController@store')->name('store');
+Route::post('update/{id}', 'ContentController@update')->name('update');
+Route::post('destroy/{id}', 'ContentController@destroy')->name('destroy');
